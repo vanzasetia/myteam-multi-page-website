@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://myteamsoftware.netlify.app/sitemap.xml

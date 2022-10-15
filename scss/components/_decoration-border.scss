@@ -1,0 +1,23 @@
+@use "../abstracts" as *;
+
+.decoration-border {
+  @include breakpoint-up("very-small") {
+    position: relative;
+  }
+}
+
+.decoration-border::before {
+  @include breakpoint-up("very-small") {
+    position: absolute;
+    top: var(--decoration-border-top-position, #{rem(-79)});
+    left: 0;
+    background-color: var(--decoration-background-color, var(--rapture-blue));
+    width: rem(50);
+    height: rem(4);
+    content: "";
+  }
+}
+
+.decoration-border--pink::before {
+  --decoration-background-color: var(--light-coral);
+}

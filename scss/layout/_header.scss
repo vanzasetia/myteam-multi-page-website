@@ -1,0 +1,159 @@
+@use "../abstracts" as *;
+
+@mixin make-list-to-normal-flow($gap: rem(40)) {
+  display: flex;
+  position: static;
+  justify-content: flex-start;
+  align-items: center;
+  gap: $gap;
+  transform: translate(0);
+  visibility: visible;
+  transition: unset;
+  background-image: unset;
+  background-color: unset;
+  padding: 0;
+  width: unset;
+  height: unset;
+}
+
+.header {
+  padding-top: var(--header-block-spacing);
+  padding-bottom: var(--header-block-spacing);
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-2xs);
+}
+
+.header__navigation {
+  @include breakpoint-up("tiny") {
+    flex-grow: 1;
+  }
+}
+
+.header__menu-button {
+  display: inline-block;
+  cursor: pointer;
+  border: rem(2) solid transparent;
+  background-color: transparent;
+  width: rem(44);
+
+  @include focus-visible(var(--white));
+
+  @include breakpoint-up("tiny") {
+    display: none;
+  }
+}
+
+/**
+ * 1. Makes the close button disappear faster
+ */
+.header__menu-button--close {
+  position: relative;
+  position: fixed;
+  top: rem(50);
+  right: rem(32);
+  transform: translateX(200%); /* 1 */
+  visibility: hidden;
+  z-index: 2;
+
+  @include prefers-motion {
+    transition: transform var(--transition), visibility var(--transition);
+  }
+}
+
+.header__menu-icon {
+  width: 100%;
+}
+
+.header__list {
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  visibility: hidden;
+  z-index: 2;
+  background-image: url("/svg/bg-pattern-about-1-mobile-nav-1.svg");
+  background-position: bottom right rem(-100);
+  background-repeat: no-repeat;
+  background-color: var(--police-blue);
+  padding-right: rem(48);
+  padding-left: rem(48);
+  height: 100vh;
+  list-style: none;
+
+  @include prefers-motion {
+    transition: transform var(--transition), visibility var(--transition);
+  }
+
+  @include breakpoint-up("tiny") {
+    @include make-list-to-normal-flow;
+  }
+}
+
+.header__list.is-open {
+  transform: translate(0);
+  visibility: visible;
+}
+
+.header__list.is-open + .header__menu-button--close {
+  transform: translate(0);
+  visibility: visible;
+}
+
+.header__item:first-child {
+  margin-top: rem(112);
+
+  @include breakpoint-up("tiny") {
+    margin-top: unset;
+  }
+}
+
+.header__item:not(:first-child) {
+  margin-top: rem(24);
+
+  @include breakpoint-up("tiny") {
+    margin-top: unset;
+  }
+}
+
+.header__item:last-child {
+  @include breakpoint-up("tiny") {
+    margin-left: auto;
+  }
+}
+
+.no-js .header__container {
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include breakpoint-up("tiny") {
+    justify-content: space-between;
+  }
+}
+
+.no-js .header__menu-button {
+  display: none;
+}
+
+.no-js .header__list {
+  flex-wrap: wrap;
+  @include make-list-to-normal-flow(var(--space-3xs));
+}
+
+.no-js .header__list::before {
+  display: none;
+}
+
+.no-js .header__item {
+  margin: 0;
+}
+
+.no-js .header__item:last-child {
+  @include breakpoint-up("tiny") {
+    margin-left: auto;
+  }
+}

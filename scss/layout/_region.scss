@@ -1,0 +1,15 @@
+@use "../abstracts" as *;
+
+.region {
+  background-color: var(
+    --region-background-color,
+    var(--sacramento-state-green)
+  );
+  padding-top: var(--region-block-spacing);
+  padding-bottom: var(--region-block-spacing);
+  color: var(--region-text-color, var(--white));
+}
+
+.region--primary {
+  --region-background-color: var(--midnight-green);
+}

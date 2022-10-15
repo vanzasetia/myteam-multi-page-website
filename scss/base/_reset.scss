@@ -1,0 +1,200 @@
+@use "../abstracts" as *;
+
+:root {
+  --midnight-green: hsl(186deg 98% 17%);
+  --light-coral: hsl(0deg 87% 73%);
+  --white: hsl(0deg 0% 100%);
+  --rapture-blue: hsl(179deg 42% 63%);
+  --police-blue: hsl(187deg 41% 29%);
+  --deep-jungle-green: hsl(186deg 100% 14%);
+  --sacramento-state-green: hsl(186deg 96% 10%);
+  --dark-green: hsl(186deg 100% 8%);
+  --fluid-font-size-100: clamp(0.94rem, calc(0.88rem + 0.29vw), 1.13rem);
+  --fluid-font-size-200: clamp(2rem, calc(1.69rem + 1.55vw), 3rem);
+  --fluid-font-size-300: clamp(2.5rem, calc(2.03rem + 2.33vw), 4rem);
+  --fluid-font-size-400: clamp(2.5rem, calc(1.33rem + 5.83vw), 6.25rem);
+  --space-3xs: clamp(1.5rem, calc(1.19rem + 1.55vw), 2.5rem);
+  --space-2xs: clamp(1.5rem, calc(0.41rem + 5.44vw), 5rem);
+  --space-xs: clamp(3.5rem, calc(2.16rem + 6.7vw), 7.81rem);
+  --space-s: clamp(1.5rem, calc(-1.54rem + 11.46vw), 8.13rem);
+  --space-m: clamp(1.5rem, calc(-3.08rem + 22.91vw), 16.25rem);
+  --space-l: clamp(5.25rem, calc(5.09rem + 0.78vw), 5.75rem);
+  --body-font-size: #{rem(15)};
+  --body-font-family: "Livvic", sans-serif;
+  --body-background-color: var(--midnight-green);
+  --body-text-color: var(--white);
+  --container-max-width: #{rem(1290)};
+  --container-inline-spacing: clamp(1.5rem, calc(0.22rem + 6.41vw), 5.63rem);
+  --region-block-spacing: clamp(5rem, calc(3.83rem + 5.83vw), 8.75rem);
+  --section-hero-block-start-spacing: clamp(
+    2.81rem,
+    calc(2.23rem + 2.91vw),
+    4.69rem
+  );
+  --hero-homepage-block-end-spacing: clamp(
+    12.5rem,
+    calc(11.53rem + 4.85vw),
+    15.63rem
+  );
+  --header-block-spacing: clamp(3rem, calc(2.51rem + 2.43vw), 4.56rem);
+  --transition: 200ms ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-delay: -1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-delay: 0s !important;
+    transition-duration: 0s !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background-color: var(--white);
+  color: var(--dark-green);
+}
+
+/**
+ * Screen Reader Class
+ * 
+ * To hide content visually.
+ *
+ * For more information: https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034
+ */
+.sr-only {
+  position: absolute !important;
+  clip-path: inset(50%) !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+}
+
+body {
+  background-color: var(--body-background-color);
+  color: var(--body-text-color);
+  font-weight: 600;
+  font-size: var(--body-font-size);
+  line-height: 1.6;
+  font-family: var(--body-font-family);
+}
+
+body.is-menu-open::before {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(0 0 0 / 40%);
+  width: 100%;
+  height: 100vh;
+  content: "";
+
+  @include breakpoint-up("tiny") {
+    display: none;
+  }
+}
+
+h1 {
+  max-width: 10ch;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/**
+ * 1. Windows high contrast hover effect
+ */
+a {
+  display: inline-block;
+  width: fit-content;
+  color: inherit;
+  text-decoration-color: transparent; /* 1 */
+
+  @include focus-visible(var(--white));
+
+  @include on-event {
+    color: var(--light-coral);
+    text-decoration: none; /* 1 */
+  }
+
+  @include prefers-motion {
+    transition: color var(--transition);
+  }
+}
+
+/** 
+ * Avoid overloading a user with 
+ * sound from a video that 
+ * autoplays when the page is loaded.
+ *
+ * Source: https://github.com/AllThingsSmitty/css-protips#hide-autoplay-videos-that-arent-muted
+ */
+video[autoplay]:not([muted]) {
+  display: none;
+}
+
+/**
+ * Set font-size on Form Elements for a 
+ * Better Mobile Experience
+ *
+ * To avoid mobile browsers (iOS Safari,
+ * et al.) from zooming in on HTML form 
+ * elements when a <select> drop-down is
+ * tapped, add font-size to the selector
+ * rule.
+ *
+ * Source: https://github.com/AllThingsSmitty/css-protips#set-font-size-on-form-elements-for-a-better-mobile-experience
+ */
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  font-size: 1rem;
+}
+
+svg {
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+/** 
+ * Using currentColor to inherit the 
+ * color value 
+ */
+svg path {
+  fill: currentColor;
+}
+
+.hidden {
+  visibility: hidden;
+  width: 0.0625rem;
+  height: 0;
+}
+
+[hidden] {
+  display: none;
+}

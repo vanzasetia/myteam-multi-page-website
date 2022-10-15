@@ -1,0 +1,24 @@
+@use "../abstracts" as *;
+
+.signoff {
+  --signoff-block-spacing: #{rem(76)};
+
+  background-image: url("/svg/bg-pattern-home-6-about-5.svg");
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  padding-top: var(--signoff-block-spacing);
+  padding-bottom: var(--signoff-block-spacing);
+}
+
+.signoff__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-s);
+  text-align: center;
+
+  @include breakpoint-up("very-small") {
+    gap: var(--space-m);
+  }
+}

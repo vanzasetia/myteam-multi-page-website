@@ -1,0 +1,23 @@
+@use "../abstracts" as *;
+
+.title {
+  line-height: var(--title-line-height, 1);
+}
+
+.title--tiny {
+  --title-line-height: 1.5;
+
+  font-size: rem(18);
+}
+
+.title--small {
+  font-size: var(--fluid-font-size-200);
+}
+
+.title--medium {
+  font-size: var(--fluid-font-size-300);
+}
+
+.title--large {
+  font-size: var(--fluid-font-size-400);
+}

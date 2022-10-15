@@ -1,0 +1,988 @@
+/*  Modern CSS reset - https://piccalil.li/blog/a-modern-css-reset/ */
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+}
+/* Source: https://github.com/h5bp/html5-boilerplate/blob/main/dist/css/style.css */
+/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/**
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/**
+ * DISCLAIMER!
+ * I had added some changes based on my preference.
+ * This is not the original styling!
+ */
+/**
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ */
+::selection {
+  text-shadow: none;
+}
+
+/**
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+audio,
+canvas,
+iframe,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/**
+ * Remove default fieldset styles.
+ */
+fieldset {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Don't allow horizontal resizing of textareas.
+ */
+textarea {
+  resize: vertical;
+}
+
+:root {
+  --midnight-green: hsl(186deg 98% 17%);
+  --light-coral: hsl(0deg 87% 73%);
+  --white: hsl(0deg 0% 100%);
+  --rapture-blue: hsl(179deg 42% 63%);
+  --police-blue: hsl(187deg 41% 29%);
+  --deep-jungle-green: hsl(186deg 100% 14%);
+  --sacramento-state-green: hsl(186deg 96% 10%);
+  --dark-green: hsl(186deg 100% 8%);
+  --fluid-font-size-100: clamp(0.94rem, calc(0.88rem + 0.29vw), 1.13rem);
+  --fluid-font-size-200: clamp(2rem, calc(1.69rem + 1.55vw), 3rem);
+  --fluid-font-size-300: clamp(2.5rem, calc(2.03rem + 2.33vw), 4rem);
+  --fluid-font-size-400: clamp(2.5rem, calc(1.33rem + 5.83vw), 6.25rem);
+  --space-3xs: clamp(1.5rem, calc(1.19rem + 1.55vw), 2.5rem);
+  --space-2xs: clamp(1.5rem, calc(0.41rem + 5.44vw), 5rem);
+  --space-xs: clamp(3.5rem, calc(2.16rem + 6.7vw), 7.81rem);
+  --space-s: clamp(1.5rem, calc(-1.54rem + 11.46vw), 8.13rem);
+  --space-m: clamp(1.5rem, calc(-3.08rem + 22.91vw), 16.25rem);
+  --space-l: clamp(5.25rem, calc(5.09rem + 0.78vw), 5.75rem);
+  --body-font-size: 0.9375rem;
+  --body-font-family: "Livvic", sans-serif;
+  --body-background-color: var(--midnight-green);
+  --body-text-color: var(--white);
+  --container-max-width: 80.625rem;
+  --container-inline-spacing: clamp(1.5rem, calc(0.22rem + 6.41vw), 5.63rem);
+  --region-block-spacing: clamp(5rem, calc(3.83rem + 5.83vw), 8.75rem);
+  --section-hero-block-start-spacing: clamp(
+    2.81rem,
+    calc(2.23rem + 2.91vw),
+    4.69rem
+  );
+  --hero-homepage-block-end-spacing: clamp(
+    12.5rem,
+    calc(11.53rem + 4.85vw),
+    15.63rem
+  );
+  --header-block-spacing: clamp(3rem, calc(2.51rem + 2.43vw), 4.56rem);
+  --transition: 200ms ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-delay: -1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-delay: 0s !important;
+    transition-duration: 0s !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+  }
+}
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background-color: var(--white);
+  color: var(--dark-green);
+}
+
+/**
+ * Screen Reader Class
+ * 
+ * To hide content visually.
+ *
+ * For more information: https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034
+ */
+.sr-only {
+  position: absolute !important;
+  clip-path: inset(50%) !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+}
+
+body {
+  background-color: var(--body-background-color);
+  color: var(--body-text-color);
+  font-weight: 600;
+  font-size: var(--body-font-size);
+  line-height: 1.6;
+  font-family: var(--body-font-family);
+}
+
+body.is-menu-open::before {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100vh;
+  content: "";
+}
+@media screen and (min-width: 40em) {
+  body.is-menu-open::before {
+    display: none;
+  }
+}
+
+h1 {
+  max-width: 10ch;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/**
+ * 1. Windows high contrast hover effect
+ */
+a {
+  display: inline-block;
+  width: fit-content;
+  color: inherit;
+  text-decoration-color: transparent; /* 1 */
+}
+a:focus-visible,
+a:focus {
+  outline: 0.1875rem dotted var(--white);
+  outline-offset: 0.3125rem;
+}
+a:hover,
+a:active {
+  color: var(--light-coral);
+  text-decoration: none; /* 1 */
+}
+@media screen and (prefers-reduced-motion: no-preference) {
+  a {
+    transition: color var(--transition);
+  }
+}
+
+/** 
+ * Avoid overloading a user with 
+ * sound from a video that 
+ * autoplays when the page is loaded.
+ *
+ * Source: https://github.com/AllThingsSmitty/css-protips#hide-autoplay-videos-that-arent-muted
+ */
+video[autoplay]:not([muted]) {
+  display: none;
+}
+
+/**
+ * Set font-size on Form Elements for a 
+ * Better Mobile Experience
+ *
+ * To avoid mobile browsers (iOS Safari,
+ * et al.) from zooming in on HTML form 
+ * elements when a <select> drop-down is
+ * tapped, add font-size to the selector
+ * rule.
+ *
+ * Source: https://github.com/AllThingsSmitty/css-protips#set-font-size-on-form-elements-for-a-better-mobile-experience
+ */
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  font-size: 1rem;
+}
+
+svg {
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+/** 
+ * Using currentColor to inherit the 
+ * color value 
+ */
+svg path {
+  fill: currentColor;
+}
+
+.hidden {
+  visibility: hidden;
+  width: 0.0625rem;
+  height: 0;
+}
+
+[hidden] {
+  display: none;
+}
+
+.skip-content {
+  display: inline-block;
+  position: fixed;
+  top: 3rem;
+  left: 0;
+  transform: translateX(-200%);
+  z-index: 200;
+  background-color: var(--white);
+  padding: 1em 2em;
+  color: var(--dark-green);
+  font-size: 1.25rem;
+  text-decoration: 0.1em solid;
+}
+@media screen and (prefers-reduced-motion: no-preference) {
+  .skip-content {
+    transition: transform 0.3s ease, color var(--transition);
+  }
+}
+
+.skip-content:focus,
+.skip-content:focus-visible {
+  transform: translate(0);
+  outline: 0.2em dashed var(--white);
+  outline-offset: 0.25em;
+}
+
+.title {
+  line-height: var(--title-line-height, 1);
+}
+
+.title--tiny {
+  --title-line-height: 1.5;
+  font-size: 1.125rem;
+}
+
+.title--small {
+  font-size: var(--fluid-font-size-200);
+}
+
+.title--medium {
+  font-size: var(--fluid-font-size-300);
+}
+
+.title--large {
+  font-size: var(--fluid-font-size-400);
+}
+
+.button {
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  border-radius: 1.5rem;
+  background-color: transparent;
+  padding: 0.625rem 2.0625rem;
+  text-decoration: none;
+}
+
+.button--light-border {
+  border: 0.125rem solid var(--white);
+  color: var(--white);
+}
+.button--light-border:focus-visible,
+.button--light-border:focus {
+  outline: 0.1875rem dotted var(--white);
+  outline-offset: 0.3125rem;
+}
+.button--light-border:hover,
+.button--light-border:active {
+  background-color: var(--white);
+  color: var(--dark-green);
+}
+@media screen and (prefers-reduced-motion: no-preference) {
+  .button--light-border {
+    transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+  }
+}
+
+.button--dark-border {
+  border: 0.125rem solid var(--sacramento-state-green);
+  color: var(--sacramento-state-green);
+}
+.button--dark-border:focus-visible,
+.button--dark-border:focus {
+  outline: 0.1875rem dotted var(--dark-green);
+  outline-offset: 0.3125rem;
+}
+.button--dark-border:hover,
+.button--dark-border:active {
+  background-color: var(--sacramento-state-green);
+  color: var(--white);
+}
+@media screen and (prefers-reduced-motion: no-preference) {
+  .button--dark-border {
+    transition: background-color var(--transition), color var(--transition);
+  }
+}
+
+.button--white-fill {
+  background-color: var(--white);
+  color: var(--deep-jungle-green);
+}
+.button--white-fill:hover,
+.button--white-fill:active {
+  background-color: var(--rapture-blue);
+}
+@media screen and (prefers-reduced-motion: no-preference) {
+  .button--white-fill {
+    transition: background-color var(--transition);
+  }
+}
+
+@media screen and (min-width: 59.375em) {
+  .decoration-border {
+    position: relative;
+  }
+}
+
+@media screen and (min-width: 59.375em) {
+  .decoration-border::before {
+    position: absolute;
+    top: var(--decoration-border-top-position, -4.9375rem);
+    left: 0;
+    background-color: var(--decoration-background-color, var(--rapture-blue));
+    width: 3.125rem;
+    height: 0.25rem;
+    content: "";
+  }
+}
+
+.decoration-border--pink::before {
+  --decoration-background-color: var(--light-coral);
+}
+
+.header {
+  padding-top: var(--header-block-spacing);
+  padding-bottom: var(--header-block-spacing);
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-2xs);
+}
+
+@media screen and (min-width: 40em) {
+  .header__navigation {
+    flex-grow: 1;
+  }
+}
+
+.header__menu-button {
+  display: inline-block;
+  cursor: pointer;
+  border: 0.125rem solid transparent;
+  background-color: transparent;
+  width: 2.75rem;
+}
+.header__menu-button:focus-visible,
+.header__menu-button:focus {
+  outline: 0.1875rem dotted var(--white);
+  outline-offset: 0.3125rem;
+}
+@media screen and (min-width: 40em) {
+  .header__menu-button {
+    display: none;
+  }
+}
+
+/**
+ * 1. Makes the close button disappear faster
+ */
+.header__menu-button--close {
+  position: relative;
+  position: fixed;
+  top: 3.125rem;
+  right: 2rem;
+  transform: translateX(200%); /* 1 */
+  visibility: hidden;
+  z-index: 2;
+}
+@media screen and (prefers-reduced-motion: no-preference) {
+  .header__menu-button--close {
+    transition: transform var(--transition), visibility var(--transition);
+  }
+}
+
+.header__menu-icon {
+  width: 100%;
+}
+
+.header__list {
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  visibility: hidden;
+  z-index: 2;
+  background-image: url("/svg/bg-pattern-about-1-mobile-nav-1.svg");
+  background-position: bottom right -6.25rem;
+  background-repeat: no-repeat;
+  background-color: var(--police-blue);
+  padding-right: 3rem;
+  padding-left: 3rem;
+  height: 100vh;
+  list-style: none;
+}
+@media screen and (prefers-reduced-motion: no-preference) {
+  .header__list {
+    transition: transform var(--transition), visibility var(--transition);
+  }
+}
+@media screen and (min-width: 40em) {
+  .header__list {
+    display: flex;
+    position: static;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2.5rem;
+    transform: translate(0);
+    visibility: visible;
+    transition: unset;
+    background-image: unset;
+    background-color: unset;
+    padding: 0;
+    width: unset;
+    height: unset;
+  }
+}
+
+.header__list.is-open {
+  transform: translate(0);
+  visibility: visible;
+}
+
+.header__list.is-open + .header__menu-button--close {
+  transform: translate(0);
+  visibility: visible;
+}
+
+.header__item:first-child {
+  margin-top: 7rem;
+}
+@media screen and (min-width: 40em) {
+  .header__item:first-child {
+    margin-top: unset;
+  }
+}
+
+.header__item:not(:first-child) {
+  margin-top: 1.5rem;
+}
+@media screen and (min-width: 40em) {
+  .header__item:not(:first-child) {
+    margin-top: unset;
+  }
+}
+
+@media screen and (min-width: 40em) {
+  .header__item:last-child {
+    margin-left: auto;
+  }
+}
+
+.no-js .header__container {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media screen and (min-width: 40em) {
+  .no-js .header__container {
+    justify-content: space-between;
+  }
+}
+
+.no-js .header__menu-button {
+  display: none;
+}
+
+.no-js .header__list {
+  flex-wrap: wrap;
+  display: flex;
+  position: static;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--space-3xs);
+  transform: translate(0);
+  visibility: visible;
+  transition: unset;
+  background-image: unset;
+  background-color: unset;
+  padding: 0;
+  width: unset;
+  height: unset;
+}
+
+.no-js .header__list::before {
+  display: none;
+}
+
+.no-js .header__item {
+  margin: 0;
+}
+
+@media screen and (min-width: 40em) {
+  .no-js .header__item:last-child {
+    margin-left: auto;
+  }
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--container-inline-spacing);
+  padding-left: var(--container-inline-spacing);
+  max-width: var(--container-max-width);
+}
+
+.section {
+  background-color: var(--section-background-color, var(--midnight-green));
+  color: var(--section-text-color, var(--white));
+}
+
+.section--primary {
+  --section-background-color: var(--light-coral);
+  --section-text-color: var(--sacramento-state-green);
+}
+
+.section--hero {
+  padding-top: var(--section-hero-block-start-spacing);
+  font-size: var(--fluid-font-size-100);
+}
+
+.region {
+  background-color: var(
+    --region-background-color,
+    var(--sacramento-state-green)
+  );
+  padding-top: var(--region-block-spacing);
+  padding-bottom: var(--region-block-spacing);
+  color: var(--region-text-color, var(--white));
+}
+
+.region--primary {
+  --region-background-color: var(--midnight-green);
+}
+
+.hero {
+  background-image: url("/svg/bg-pattern-home-2.svg");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  padding-bottom: var(--hero-homepage-block-end-spacing);
+}
+@media screen and (min-width: 59.375em) {
+  .hero {
+    background-image: url("/svg/bg-pattern-home-2.svg"),
+      url("/svg/bg-pattern-home-1.svg");
+    background-position: bottom right 10.3125rem, top 4.0625rem left -6.25rem;
+  }
+}
+
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.875rem;
+  text-align: center;
+}
+@media screen and (min-width: 59.375em) {
+  .hero__container {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.hero__accent {
+  color: var(--light-coral);
+  font-style: normal;
+}
+
+.hero__title {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.hero__description {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 50ch;
+}
+@media screen and (min-width: 59.375em) {
+  .hero__description {
+    align-self: flex-end;
+    max-width: 27.8125rem;
+  }
+}
+
+.feature {
+  background-image: url("/svg/bg-pattern-home-3.svg");
+  background-position: top right -6.25rem;
+  background-repeat: no-repeat;
+}
+@media screen and (min-width: 59.375em) {
+  .feature {
+    background-position: bottom right -6.25rem;
+  }
+}
+
+.feature__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--space-xs);
+}
+@media screen and (min-width: 59.375em) {
+  .feature__container {
+    flex-direction: row;
+  }
+}
+
+.feature__title {
+  max-width: 37.5rem;
+}
+@media screen and (min-width: 59.375em) {
+  .feature__title {
+    max-width: 15ch;
+  }
+}
+
+.feature__title::before {
+  --decoration-border-top-position: -3.375rem;
+}
+
+.feature__accent {
+  color: var(--light-coral);
+}
+
+.feature__list {
+  max-width: 57ch;
+}
+
+.feature__item {
+  display: grid;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+}
+@media screen and (min-width: 40em) {
+  .feature__item {
+    grid-template-columns: 4.5rem 1fr;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem 1.4375rem;
+    text-align: left;
+  }
+}
+
+.feature__item:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.feature__icon {
+  margin-right: auto;
+  margin-left: auto;
+}
+@media screen and (min-width: 40em) {
+  .feature__icon {
+    grid-row: 1/3;
+  }
+}
+
+.feature__description {
+  opacity: 0.6;
+}
+
+.testimonial {
+  background-image: url("/svg/bg-pattern-home-4-about-3.svg"),
+    url("/svg/bg-pattern-home-5.svg");
+  background-position: top left, bottom right;
+  background-repeat: no-repeat;
+}
+
+.testimonial__container {
+  text-align: center;
+}
+
+.testimonial__title {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 33ch;
+}
+
+.testimonial__accent {
+  color: var(--rapture-blue);
+  font-style: normal;
+}
+
+.testimonial__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-top: var(--space-l);
+}
+@media screen and (min-width: 59.375em) {
+  .testimonial__list {
+    gap: 1.875rem;
+  }
+}
+
+.testimonial__item {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  flex-basis: calc((51.3125rem - 100%) * 999);
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (min-width: 59.375em) {
+  .testimonial__item::before {
+    position: absolute;
+    top: -2.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url("/svg/icon-quotes.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 4.1875rem;
+    height: 3.5rem;
+    content: "";
+  }
+}
+
+.testimonial__blockquote {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  max-width: 45ch;
+}
+
+.testimonial__profile {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.testimonial__profile > span {
+  display: block;
+}
+
+.testimonial__name {
+  color: var(--rapture-blue);
+  font-weight: 700;
+  font-size: var(--fluid-font-size-100);
+}
+
+.testimonial__job {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 0.8125rem;
+}
+
+.testimonial__avatar {
+  --avatar-size: 3.875rem;
+  border: 0.125rem solid hsl(179deg, 100%, 88%);
+  border-radius: 50%;
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+}
+
+.signoff {
+  --signoff-block-spacing: 4.75rem;
+  background-image: url("/svg/bg-pattern-home-6-about-5.svg");
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  padding-top: var(--signoff-block-spacing);
+  padding-bottom: var(--signoff-block-spacing);
+}
+
+.signoff__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-s);
+  text-align: center;
+}
+@media screen and (min-width: 59.375em) {
+  .signoff__container {
+    gap: var(--space-m);
+  }
+}
+
+.footer {
+  background-color: var(--dark-green);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.footer__container {
+  display: grid;
+  justify-content: center;
+  gap: 2.25rem;
+  text-align: center;
+}
+@media screen and (min-width: 40em) {
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "logo address" "navigation address" "social copyright";
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+@media screen and (min-width: 59.375em) {
+  .footer__container {
+    grid-template-columns: 1fr 2fr 18.75rem;
+    grid-template-areas: "logo address social" "navigation address copyright";
+    gap: 1.5625rem;
+  }
+}
+
+.footer__home {
+  margin-right: auto;
+  margin-left: auto;
+}
+@media screen and (min-width: 40em) {
+  .footer__home {
+    grid-area: logo;
+    margin: unset;
+  }
+}
+
+@media screen and (min-width: 40em) {
+  .footer__navigation {
+    grid-area: navigation;
+  }
+}
+
+.footer__list {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+}
+@media screen and (min-width: 40em) {
+  .footer__list {
+    justify-content: flex-start;
+  }
+}
+
+.footer__address {
+  opacity: 0.6;
+}
+@media screen and (min-width: 40em) {
+  .footer__address {
+    grid-area: address;
+    text-align: right;
+  }
+}
+@media screen and (min-width: 59.375em) {
+  .footer__address {
+    text-align: left;
+  }
+}
+
+.footer__address > span {
+  display: block;
+}
+
+.footer__social-media {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+@media screen and (min-width: 40em) {
+  .footer__social-media {
+    grid-area: social;
+    justify-content: flex-start;
+  }
+}
+@media screen and (min-width: 59.375em) {
+  .footer__social-media {
+    justify-content: flex-end;
+  }
+}
+
+.footer__copyright {
+  opacity: 0.6;
+}
+@media screen and (min-width: 40em) {
+  .footer__copyright {
+    grid-area: copyright;
+    text-align: right;
+  }
+}

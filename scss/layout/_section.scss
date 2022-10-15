@@ -1,0 +1,16 @@
+@use "../abstracts" as *;
+
+.section {
+  background-color: var(--section-background-color, var(--midnight-green));
+  color: var(--section-text-color, var(--white));
+}
+
+.section--primary {
+  --section-background-color: var(--light-coral);
+  --section-text-color: var(--sacramento-state-green);
+}
+
+.section--hero {
+  padding-top: var(--section-hero-block-start-spacing);
+  font-size: var(--fluid-font-size-100);
+}

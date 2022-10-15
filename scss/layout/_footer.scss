@@ -1,0 +1,99 @@
+@use "../abstracts" as *;
+
+.footer {
+  background-color: var(--dark-green);
+  padding-top: rem(48);
+  padding-bottom: rem(48);
+}
+
+.footer__container {
+  display: grid;
+  justify-content: center;
+  gap: rem(36);
+  text-align: center;
+
+  @include breakpoint-up("tiny") {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "logo address"
+      "navigation address"
+      "social copyright";
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  @include breakpoint-up("very-small") {
+    grid-template-columns: 1fr 2fr rem(300);
+    grid-template-areas:
+      "logo address social"
+      "navigation address copyright";
+    gap: rem(25);
+  }
+}
+
+.footer__home {
+  margin-right: auto;
+  margin-left: auto;
+
+  @include breakpoint-up("tiny") {
+    grid-area: logo;
+    margin: unset;
+  }
+}
+
+.footer__navigation {
+  @include breakpoint-up("tiny") {
+    grid-area: navigation;
+  }
+}
+
+.footer__list {
+  display: flex;
+  justify-content: center;
+  gap: rem(40);
+
+  @include breakpoint-up("tiny") {
+    justify-content: flex-start;
+  }
+}
+
+.footer__address {
+  opacity: 0.6;
+
+  @include breakpoint-up("tiny") {
+    grid-area: address;
+    text-align: right;
+  }
+
+  @include breakpoint-up("very-small") {
+    text-align: left;
+  }
+}
+
+.footer__address > span {
+  display: block;
+}
+
+.footer__social-media {
+  display: flex;
+  justify-content: center;
+  gap: rem(16);
+
+  @include breakpoint-up("tiny") {
+    grid-area: social;
+    justify-content: flex-start;
+  }
+
+  @include breakpoint-up("very-small") {
+    justify-content: flex-end;
+  }
+}
+
+.footer__copyright {
+  opacity: 0.6;
+
+  @include breakpoint-up("tiny") {
+    grid-area: copyright;
+    text-align: right;
+  }
+}

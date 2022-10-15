@@ -1,0 +1,23 @@
+{
+  "name": "Find the Right Team for Your Next Project - myteam",
+  "short_name": "myteam",
+  "description": "We assist businesses in assembling dynamic teams comprised of top global talent. We deliver incredible results by leveraging our network of passionate professionals.",
+  "start_url": "/",
+  "theme_color": "#014E56",
+  "background_color": "#014E56",
+  "display": "standalone",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/favicons/icon-large.png",
+      "type": "image/png",
+      "sizes": "1024x1024"
+    },
+    {
+      "src": "/favicons/icon-large-maskable.png",
+      "type": "image/png",
+      "sizes": "1024x1024",
+      "purpose": "maskable"
+    }
+  ]
+}
