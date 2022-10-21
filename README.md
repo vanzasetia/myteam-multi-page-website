@@ -248,8 +248,6 @@ It's similar to the hamburger menu button.
 - `aria-controls` - to tell that this button is controlling the menu (`ul`).
 - `aria-labelledby` - to give the `button` an accessible name (*close menu*). The text content should be different from the hamburger menu button. This way, the users can differentiate between those two buttons.
 
-Then, for JavaScript, it is used to toggle the state of the `aria-expanded` on the menu button. Also, toggle the visibility of the menu.
-
 #### Problem With Hamburger Menu
 
 Now, there is a problem with this hamburger menu.
