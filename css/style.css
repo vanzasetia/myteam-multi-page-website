@@ -187,6 +187,10 @@ body {
   font-family: var(--body-font-family);
 }
 
+body.is-menu-open {
+  overflow: hidden;
+}
+
 body.is-menu-open::before {
   display: block;
   position: fixed;
