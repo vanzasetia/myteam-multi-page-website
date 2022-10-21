@@ -113,10 +113,8 @@ Here is the HTML markup.
       aria-hidden="true"
     />
   </button>
-  <p id="menu-label" hidden>links</p>
   <ul
     id="menu-list"
-    aria-labelledby="menu-label"
     role="menu"
   >
     <li role="presentation">
@@ -200,10 +198,8 @@ Some things are going on so I list them.
 Next, let me explain the list.
 
 ```html
-<p id="menu-label" hidden>links</p>
 <ul
   id="menu-list"
-  aria-labelledby="menu-label"
   role="menu"
 >
   <li role="presentation">
@@ -220,11 +216,9 @@ Next, let me explain the list.
 
 *"What's the purpose of doing all these things?"* (You may ask)
 
-- `ul` attributes:
-  - `role="menu"` - to tell screen readers that it is a menu
-  - `aria-labelledby` - to label the menu. Narrator pronounces it as *"links, menu"*. I can't think of a better label. At least, it tells screen reader users that it is a menu that contains links.
+- `ul[role="menu"]` - to tell screen readers that it is a menu
 - `li` with `role="presentation"` - to remove the semantic meaning of the `li`.
-- `a` with `role="menuitem"` - to tell that it is an item of a menu. This also removes the semantic meaning of the `a` tag. So, that's why I labeled the `menu` with *"links"*.
+- `a` with `role="menuitem"` - to tell that it is an item of a menu. This also removes the semantic meaning of the `a` tag.
 
 Lastly, for the close button.
 
