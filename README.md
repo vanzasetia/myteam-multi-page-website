@@ -91,9 +91,9 @@ The users should be able to:
 
 #### Accessible Menu Component
 
-This was the first time that I created a hamburger menu. So, I looked up [Inclusive Components](https://inclusive-components.design/). I found what I was looking for.
+This was the first time that I created a hamburger menu. So, I looked up [Inclusive Components](https://inclusive-components.design/) to help me create accessible menu component.
 
-So, let's take a look at the HTML.
+Here is the HTML markup.
 
 ```html
 <nav aria-labelledby="primary-navigation">
@@ -157,15 +157,15 @@ The first chunk is this.
 </nav>
 ```
 
-So, I label the `nav` since there are two `nav` elements. So, I need to label both of them so that screen reader users can differentiate between those `nav`.
+I label the `nav` because there are two `nav` elements. I need to label both of them so that screen reader users can differentiate between those `nav`.
 
 ![Screenshot of the Narrator "Search Landmark" menu](./images/page-landmarks.png)
 
-There are two navigation landmarks. The screen reader users can differentiate them since labels are unique
+This way, the screen reader users can differentiate them.
 
-*Why do I choose this technique to label the `nav`?* It's because the translation API can translate the word *primary* and *secondary*. If I use [`aria-label` then those labels probably won't get translated](https://adrianroselli.com/2019/11/aria-label-does-not-translate.html).
+*Why do I choose this technique to label the `nav`?* It's because the translation API can translate the word *primary* and *secondary*. If I use [`aria-label` then those labels probably won't get translated](https://adrianroselli.com/2019/11/aria-label-does-not-translate.html). But, I am not sure that translation API be able to translate hidden text.
 
-Also, `aria-labelledby` still be able to get the text content even though the element has `hidden` attribute.
+I used `aria-labelledby` because it can get the text content even though the `p` has `hidden` attribute.
 
 > See [aria-labelledby - Accessibility | MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby)
 
@@ -189,10 +189,10 @@ Next, let me explain the hamburger menu button.
 </button>
 ```
 
-Some things are going on so I will list them.
+Some things are going on so I list them.
 
 - `button` - to tell everyone that it is a button or an interactive element. As a side note, don't use non-interactive elements for something that has interactivity.
-- `type="button` - to prevent unexpected behavior. Reference: [Checklist - The A11Y Project #use-the-button-element-for-buttons](https://www.a11yproject.com/checklist/#use-the-button-element-for-buttons)
+- `type="button"` - to prevent unexpected behavior. Reference: [Checklist - The A11Y Project #use-the-button-element-for-buttons](https://www.a11yproject.com/checklist/#use-the-button-element-for-buttons)
 - `aria-expanded` - to tell the screen readers whether the `button` is in "expanded" state or "collapsed" state. Or in other words, it is used to tell the screen reader whether the menu is opened or closed.
 - `aria-controls` - to tell that this button is controlling the menu (`ul`).
 - `aria-labelledby` - to give the `button` an accessible name (*menu*). It's the same way as labeling the `nav` elements.
@@ -222,7 +222,7 @@ Next, let me explain the list.
 
 - `ul` attributes:
   - `role="menu"` - to tell screen readers that it is a menu
-  - `aria-labelledby` - to label the menu. Narrator pronounces it as *"links, menu"*. I can't think of a better label. At least, it tells people that it is a menu that contains links.
+  - `aria-labelledby` - to label the menu. Narrator pronounces it as *"links, menu"*. I can't think of a better label. At least, it tells screen reader users that it is a menu that contains links.
 - `li` with `role="presentation"` - to remove the semantic meaning of the `li`.
 - `a` with `role="menuitem"` - to tell that it is an item of a menu. This also removes the semantic meaning of the `a` tag. So, that's why I labeled the `menu` with *"links"*.
 
@@ -249,10 +249,10 @@ Lastly, for the close button.
 It's similar to the hamburger menu button.
 
 - `button` - to tell everyone that it is a button or an interactive element.
-- `type="button` - to prevent unexpected behavior.
+- `type="button"` - to prevent unexpected behavior.
 - `aria-expanded="true"` - the close button is only available when the menu is opened. So, it always has `true` value.
 - `aria-controls` - to tell that this button is controlling the menu (`ul`).
-- `aria-labelledby` - to give the `button` an accessible name (* close menu*). The text content should be different. This way, the users know that it is a close button.
+- `aria-labelledby` - to give the `button` an accessible name (*close menu*). The text content should be different from the hamburger menu button. This way, the users can differentiate between those two buttons.
 
 Then, for JavaScript, it is used to toggle the state of the `aria-expanded` on the menu button. Also, toggle the visibility of the menu.
 
@@ -268,15 +268,13 @@ I can't scroll to see the rest of the menu items.
 
 It's because of the `position: fixed`. You may hear before that it's best to avoid fixed and absolute positioning. This is one of the reasons.
 
-But, I can't do anything. The menu needs to be in a fixed position. Otherwise, it won't work.
-
 #### No JavaScript No Problem
 
-Usually, when the users turn off the JavaScript, I decided to give them only a message to turn on JavaScript. Of course, this is only for websites that use JavaScript (otherwise, it's useless).
+Usually, when the users turn off the JavaScript, I decided to give them only a message to turn on JavaScript.
 
 ![](./images/please-turn-on-javascript.png)
 
-Now, I try a different approach. I try to do the progressive enhancement. So, instead of telling the users to turn on JavaScript, I decided to provide a way for users to interact with the site without JavaScript.
+Now, I try a different approach. I try to do the *progressive enhancement*. So, instead of telling the users to turn on JavaScript, I decided to provide a way for users to interact with the site without JavaScript.
 
 ##### Menu
 
@@ -292,6 +290,8 @@ By the way, it also fixes the hamburger menu issue that I mentioned. At 400% zoo
 
 ![](./images/400-zoom-level-no-javascript.png)
 
+So, by turning off JavaScript, the site becomes more accessible.
+
 #### Performance
 
 I start knowing about web performance after watching some of the Harry Roberts talks. Here are some of his talks that I love.
@@ -302,7 +302,7 @@ I start knowing about web performance after watching some of the Harry Roberts t
 
 But, before you start watching them, I want to tell you how I optimize the performance of my site.
 
-So, it's all about Google Fonts. The site is using the "Livvic" font family. The site is required three different font weights, 700, 600, and 500.
+So, it's about Google Fonts. The site is using the "Livvic" font family. The site is required three different font weights, 700, 600, and 500.
 
 The problem is the 500 font-weight is only used on a very little amount of content.
 
