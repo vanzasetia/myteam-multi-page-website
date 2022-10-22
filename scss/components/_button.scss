@@ -16,7 +16,7 @@
 
   @include focus-visible(var(--white));
 
-  @include on-event {
+  @include hover {
     background-color: var(--white);
     color: var(--dark-green);
   }
@@ -32,7 +32,7 @@
 
   @include focus-visible(var(--dark-green));
 
-  @include on-event {
+  @include hover {
     background-color: var(--sacramento-state-green);
     color: var(--white);
   }
@@ -46,7 +46,7 @@
   background-color: var(--white);
   color: var(--deep-jungle-green);
 
-  @include on-event {
+  @include hover {
     background-color: var(--rapture-blue);
   }
 

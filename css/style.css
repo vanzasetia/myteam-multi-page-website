@@ -231,10 +231,23 @@ a:focus {
   outline: 0.1875rem dotted var(--white);
   outline-offset: 0.3125rem;
 }
-a:hover,
-a:active {
-  color: var(--light-coral);
-  text-decoration: none; /* 1 */
+@media (hover: none) {
+  a {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  a:active {
+    color: var(--light-coral);
+    text-decoration: none; /* 1 */
+  }
+}
+@media (-ms-high-contrast: none),
+  (-ms-high-contrast: active),
+  (-moz-touch-enabled: 0),
+  (hover: hover) {
+  a:hover {
+    color: var(--light-coral);
+    text-decoration: none; /* 1 */
+  }
 }
 @media screen and (prefers-reduced-motion: no-preference) {
   a {
@@ -362,10 +375,23 @@ svg path {
   outline: 0.1875rem dotted var(--white);
   outline-offset: 0.3125rem;
 }
-.button--light-border:hover,
-.button--light-border:active {
-  background-color: var(--white);
-  color: var(--dark-green);
+@media (hover: none) {
+  .button--light-border {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  .button--light-border:active {
+    background-color: var(--white);
+    color: var(--dark-green);
+  }
+}
+@media (-ms-high-contrast: none),
+  (-ms-high-contrast: active),
+  (-moz-touch-enabled: 0),
+  (hover: hover) {
+  .button--light-border:hover {
+    background-color: var(--white);
+    color: var(--dark-green);
+  }
 }
 @media screen and (prefers-reduced-motion: no-preference) {
   .button--light-border {
@@ -382,10 +408,23 @@ svg path {
   outline: 0.1875rem dotted var(--dark-green);
   outline-offset: 0.3125rem;
 }
-.button--dark-border:hover,
-.button--dark-border:active {
-  background-color: var(--sacramento-state-green);
-  color: var(--white);
+@media (hover: none) {
+  .button--dark-border {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  .button--dark-border:active {
+    background-color: var(--sacramento-state-green);
+    color: var(--white);
+  }
+}
+@media (-ms-high-contrast: none),
+  (-ms-high-contrast: active),
+  (-moz-touch-enabled: 0),
+  (hover: hover) {
+  .button--dark-border:hover {
+    background-color: var(--sacramento-state-green);
+    color: var(--white);
+  }
 }
 @media screen and (prefers-reduced-motion: no-preference) {
   .button--dark-border {
@@ -397,9 +436,21 @@ svg path {
   background-color: var(--white);
   color: var(--deep-jungle-green);
 }
-.button--white-fill:hover,
-.button--white-fill:active {
-  background-color: var(--rapture-blue);
+@media (hover: none) {
+  .button--white-fill {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  .button--white-fill:active {
+    background-color: var(--rapture-blue);
+  }
+}
+@media (-ms-high-contrast: none),
+  (-ms-high-contrast: active),
+  (-moz-touch-enabled: 0),
+  (hover: hover) {
+  .button--white-fill:hover {
+    background-color: var(--rapture-blue);
+  }
 }
 @media screen and (prefers-reduced-motion: no-preference) {
   .button--white-fill {

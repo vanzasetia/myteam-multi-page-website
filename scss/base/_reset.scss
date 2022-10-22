@@ -139,7 +139,7 @@ a {
 
   @include focus-visible(var(--white));
 
-  @include on-event {
+  @include hover {
     color: var(--light-coral);
     text-decoration: none; /* 1 */
   }
