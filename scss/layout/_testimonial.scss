@@ -57,9 +57,12 @@
   }
 }
 
+/**
+ * 1. Make the element above the quote icon
+ */
 .testimonial__blockquote {
   display: flex;
-  position: relative;
+  position: relative; /* 1 */
   flex-direction: column;
   align-items: center;
   max-width: 45ch;
