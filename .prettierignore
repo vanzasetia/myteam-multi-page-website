@@ -2,8 +2,7 @@
 
 *.json
 
-scss/abstracts
-scss/vendors
+scss/abstracts/_variables.scss
 
 js/vendors
 
