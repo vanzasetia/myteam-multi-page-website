@@ -8,15 +8,23 @@
   const main = document.querySelector(".js-main");
   const footer = document.querySelector(".js-footer");
   const onLargeScreen = window.matchMedia("(min-width: 40em)");
+  const interactiveElementsOutsideMenu = [
+    ...headerLinks,
+    main,
+    footer,
+    menuButton
+  ];
 
   const trapFocusOnNav = () => {
-    const elements = [...headerLinks, main, footer, menuButton];
-    elements.forEach((element) => element.setAttribute("inert", ""));
+    interactiveElementsOutsideMenu.forEach((element) =>
+      element.setAttribute("inert", "")
+    );
   };
 
   const removeInertAttributes = () => {
-    const elements = [...headerLinks, main, footer, menuButton];
-    elements.forEach((element) => element.removeAttribute("inert"));
+    interactiveElementsOutsideMenu.forEach((element) =>
+      element.removeAttribute("inert")
+    );
   };
 
   const openMenu = () => {
