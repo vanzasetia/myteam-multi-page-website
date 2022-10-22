@@ -250,6 +250,12 @@ It's similar to the hamburger menu button.
 - `aria-controls` - to tell that this button is controlling the menu (`ul`).
 - `aria-labelledby` - to give the `button` an accessible name (*close menu*). The text content should be different from the hamburger menu button. This way, the users can differentiate between those two buttons.
 
+##### Updates
+
+- Friday, 21 October 2022 - VoiceOver doesn't pronounce the state of the hamburger menu. It's because the button is labeled using `aria-labelledby`. So, I use visually hidden label instead (`<span class="sr-only">menu</span>`).
+
+![Slack. Grace Snow says that using aria-labelledby on toggle buttons makes the VoiceOver ignores the state of the button (expanded or collapsed state)](./images/grace-snow-voiceover-aria-labelledby.png)
+
 #### Problem With Hamburger Menu
 
 Now, there is a problem with this hamburger menu.
@@ -350,6 +356,30 @@ Then, I decided to download the font file. The file size is only **6.25kb**. If 
 ## Acknowledgements
 
 [(Back to top)](#table-of-contents)
+
+[Grace Snow](https://www.frontendmentor.io/profile/grace-snow) and Alex Marshall helped me make the accessible menu component. They told me that the users should only be able to focus on the element inside the navigation.
+
+![](./images/grace-snow-and-alex-marshall-feedback-on-menu.png)
+
+Grace Snow also helped me test the menu with the VoiceOver screen reader.
+
+![](./images/grace-snow-voiceover-aria-labelledby.png)
+
+Grace Snow told me about `inert` attribute and told me to add polyfill for `inert` attribute (since it is relatively new in October 2022).
+
+![](./images/grace-snow-inert-polyfill.png)
+
+Grace Snow told me about how list items and `article` can create unnecessary noises to screen reader users.
+
+![](./images/grace-snow-over-use-1.png)
+
+![](./images/grace-snow-over-use-2.png)
+
+Grace Snow told me about capitalization can impact the way screen reader pronounces text.
+
+![](./images/grace-snow-capitalization.png)
+
+Thank you both for helping me!
 
 ## License
 
