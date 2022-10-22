@@ -860,7 +860,7 @@ svg path {
   display: flex;
   position: relative;
   flex-grow: 1;
-  flex-basis: calc((51.3125rem - 100%) * 999);
+  flex-basis: calc((50.125rem - 100%) * 999);
   flex-direction: column;
   align-items: center;
 }
