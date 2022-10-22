@@ -86,6 +86,8 @@ The users should be able to:
 - Mobile-first workflow
 - [No-motion first approach](https://tatianamac.com/posts/prefers-reduced-motion)
 - [instant.page](https://instant.page/) - preload pages with `<link rel="prefetch" href="url">` only when the users interact with the link.
+- [scriptex/hover-media-query](https://github.com/scriptex/hover-media-query) - a progressively enhanced "hover" media query.
+- [GoogleChrome/inert-polyfill](https://github.com/GoogleChrome/inert-polyfill) - polyfill for the HTML inert attribute.
 
 ### What I Learned
 
