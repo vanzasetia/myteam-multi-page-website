@@ -250,6 +250,14 @@ It's similar to the hamburger menu button.
 - `aria-controls` - to tell that this button is controlling the menu (`ul`).
 - `aria-labelledby` - to give the `button` an accessible name (*close menu*). The text content should be different from the hamburger menu button. This way, the users can differentiate between those two buttons.
 
+Then, for the JavaScript.
+
+- Toggle the `aria-expanded` state of the hamburger menu button.
+- Toggle a CSS class to the `body` and the menu list.
+  - A class on the `body` for the dark overlay (with pseudo-element).
+  - A class on the menu list to toggle the visibility of the menu.
+- Trap the focus on the menu list by adding an `inert` attribute to the `main`, `footer`, and other links in the `header` that are outside the menu list. Otherwise, the users can navigate outside the menu either by using a screen reader or a keyboard (`Tab` key).
+
 ##### Updates
 
 - Friday, 21 October 2022 - VoiceOver doesn't pronounce the state of the hamburger menu. It's because the button is labeled using `aria-labelledby`. So, I use visually hidden label instead (`<span class="sr-only">menu</span>`).
