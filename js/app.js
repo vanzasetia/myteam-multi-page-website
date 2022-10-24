@@ -13,6 +13,7 @@
     footer,
     menuButton
   ];
+  const readQuoteButtons = document.querySelectorAll(".js-read-quote-button");
 
   const trapFocusOnNav = () => {
     interactiveElementsOutsideMenu.forEach((element) =>
@@ -39,15 +40,28 @@
   };
 
   const toggleMenu = () => {
-    const isMenuOpen = menuButton.getAttribute("aria-expanded");
-    if (isMenuOpen === "false") {
-      openMenu();
-    } else {
+    const isMenuOpen = menuButton.getAttribute("aria-expanded") === "true";
+    if (isMenuOpen) {
       closeMenu();
+    } else {
+      openMenu();
+    }
+  };
+
+  const toggleQuote = (event) => {
+    const button = event.currentTarget;
+    const isQuoteOpened = button.getAttribute("aria-expanded") === "true";
+    if (isQuoteOpened) {
+      button.setAttribute("aria-expanded", "false");
+    } else {
+      button.setAttribute("aria-expanded", "true");
     }
   };
 
   menuButton.addEventListener("click", toggleMenu);
-  closeMenuButton?.addEventListener("click", closeMenu);
+  closeMenuButton.addEventListener("click", closeMenu);
   onLargeScreen.addEventListener("change", closeMenu);
+  readQuoteButtons?.forEach((button) => {
+    button.addEventListener("click", toggleQuote);
+  });
 })();

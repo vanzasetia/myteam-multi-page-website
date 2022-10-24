@@ -9,6 +9,7 @@
   --deep-jungle-green: hsl(186deg 100% 14%);
   --sacramento-state-green: hsl(186deg 96% 10%);
   --dark-green: hsl(186deg 100% 8%);
+  --ocean-blue: hsl(179deg 100% 88%);
   --fluid-font-size-100: clamp(0.94rem, calc(0.88rem + 0.29vw), 1.13rem);
   --fluid-font-size-200: clamp(2rem, calc(1.69rem + 1.55vw), 3rem);
   --fluid-font-size-300: clamp(2.5rem, calc(2.03rem + 2.33vw), 4rem);
@@ -18,7 +19,8 @@
   --space-xs: clamp(3.5rem, calc(2.16rem + 6.7vw), 7.81rem);
   --space-s: clamp(1.5rem, calc(-1.54rem + 11.46vw), 8.13rem);
   --space-m: clamp(1.5rem, calc(-3.08rem + 22.91vw), 16.25rem);
-  --space-l: clamp(5.25rem, calc(5.09rem + 0.78vw), 5.75rem);
+  --space-l: clamp(3rem, calc(2.69rem + 1.55vw), 4rem);
+  --space-xl: clamp(5.25rem, calc(5.09rem + 0.78vw), 5.75rem);
   --body-font-size: #{rem(15)};
   --body-font-family: "Livvic", sans-serif;
   --body-background-color: var(--midnight-green);
@@ -194,12 +196,6 @@ svg {
  */
 svg path {
   fill: currentColor;
-}
-
-.hidden {
-  visibility: hidden;
-  width: 0.0625rem;
-  height: 0;
 }
 
 [hidden] {

@@ -1,0 +1,42 @@
+@use "../abstracts" as *;
+
+.about {
+  background-image: url("/svg/bg-pattern-about-1-mobile-nav-1.svg");
+  background-position: bottom rem(-100) right rem(-100);
+  padding-bottom: rem(120);
+
+  @include breakpoint-up("tiny") {
+    background-position: bottom right rem(-100);
+  }
+}
+
+.about__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(30);
+  text-align: center;
+
+  @include breakpoint-up("very-small") {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+.about__title {
+  @include breakpoint-up("very-small") {
+    flex: 1 0 rem(350);
+  }
+}
+
+.about__description {
+  max-width: 50ch;
+
+  @include breakpoint-up("very-small") {
+    --decoration-border-top-position: #{rem(-40)};
+
+    align-self: flex-end;
+    max-width: unset;
+  }
+}

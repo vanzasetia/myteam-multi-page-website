@@ -25,7 +25,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: rem(48);
-  margin-top: var(--space-l);
+  margin-top: var(--space-xl);
 
   @include breakpoint-up("very-small") {
     gap: rem(30);

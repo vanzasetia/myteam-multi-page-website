@@ -15,13 +15,12 @@
 .hero__container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   gap: rem(30);
   text-align: center;
 
   @include breakpoint-up("very-small") {
     flex-direction: row;
-    justify-content: space-between;
     text-align: left;
   }
 }
@@ -31,14 +30,7 @@
   font-style: normal;
 }
 
-.hero__title {
-  margin-right: auto;
-  margin-left: auto;
-}
-
 .hero__description {
-  margin-right: auto;
-  margin-left: auto;
   max-width: 50ch;
 
   @include breakpoint-up("very-small") {
