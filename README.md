@@ -157,15 +157,15 @@ The first chunk is this.
 </nav>
 ```
 
-I label the `nav` because there are two `nav` elements. I need to label both of them so that screen reader users can differentiate between those `nav`.
+I label the `nav` because there are two `nav` elements.
 
 ![Screenshot of the Narrator "Search Landmark" menu](./images/page-landmarks.png)
 
 This way, the screen reader users can differentiate them.
 
-*Why do I choose this technique to label the `nav`?* It's because the translation API can translate the word *primary* and *secondary*. If I use [`aria-label` then those labels probably won't get translated](https://adrianroselli.com/2019/11/aria-label-does-not-translate.html). But, I am not sure that translation API be able to translate hidden text.
+*Why do I choose this technique to label the `nav`?* It's because the translation API can translate the word *primary* and *secondary*. If I use [`aria-label` then those labels probably won't get translated](https://adrianroselli.com/2019/11/aria-label-does-not-translate.html). But, I am not sure that translation API be able to translate hidden text. 😅
 
-I used `aria-labelledby` because it can get the text content even though the `p` has `hidden` attribute.
+I needed to use `aria-labelledby` so that it can get the text content even though the `p` has `hidden` attribute.
 
 > See [aria-labelledby - Accessibility | MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby)
 
@@ -189,7 +189,7 @@ Next, let me explain the hamburger menu button.
 </button>
 ```
 
-Some things are going on so I list them.
+Here are the reasons why the HTML markup needs to be like that.
 
 - `button` - to tell everyone that it is a button or an interactive element. As a side note, don't use non-interactive elements for something that has interactivity.
 - `type="button"` - to prevent unexpected behavior. Reference: [Checklist - The A11Y Project #use-the-button-element-for-buttons](https://www.a11yproject.com/checklist/#use-the-button-element-for-buttons)
@@ -244,18 +244,16 @@ Lastly, for the close button.
 
 It's similar to the hamburger menu button.
 
-- `button` - to tell everyone that it is a button or an interactive element.
+- `button` - to tell everyone that it is a button.
 - `type="button"` - to prevent unexpected behavior.
 - `aria-expanded="true"` - the close button is only available when the menu is opened. So, it always has `true` value.
 - `aria-controls` - to tell that this button is controlling the menu (`ul`).
-- `aria-labelledby` - to give the `button` an accessible name (*close menu*). The text content should be different from the hamburger menu button. This way, the users can differentiate between those two buttons.
+- `aria-labelledby` - to give the `button` an accessible name (*close menu*).
 
 Then, for the JavaScript.
 
 - Toggle the `aria-expanded` state of the hamburger menu button.
-- Toggle a CSS class to the `body` and the menu list.
-  - A class on the `body` for the dark overlay (with pseudo-element).
-  - A class on the menu list to toggle the visibility of the menu.
+- Toggle a CSS class on the `body` for the dark overlay (with pseudo-element) and prevent scrolling.
 - Trap the focus on the menu list by adding an `inert` attribute to the `main`, `footer`, and other links in the `header` that are outside the menu list. Otherwise, the users can navigate outside the menu either by using a screen reader or a keyboard (`Tab` key).
 
 ##### Updates
@@ -290,7 +288,7 @@ It only affects mobile users. So, when JavaScript is on they will get the hambur
 
 ![](./images/menu-javascript-on.png)
 
-JavaScript off, the users will get this.
+JavaScript off, the users will get horizontal menu.
 
 ![](./images/menu-javascript-off.png)
 
@@ -298,7 +296,76 @@ By the way, it also fixes the hamburger menu issue that I mentioned. At 400% zoo
 
 ![](./images/400-zoom-level-no-javascript.png)
 
-So, by turning off JavaScript, the site becomes more accessible.
+So, by turning off JavaScript, the site becomes more accessible. 😆
+
+##### Cards
+
+These cards need JavaScript to toggle the hidden content.
+
+![The three-column layout cards.](./images/about-cards.png)
+
+When you click the button, it opens the hidden content for the card.
+
+![Showing invisible content after clicking a button](./images/about-card-open.png)
+
+When JavaScript is off, the users still be able to see the whole content.
+
+![Showing all the card content is visible and the button from each card is gone](./images/about-card-javascript-off.png)
+
+#### Responsive Grid
+
+Those cards are aligned with CSS Grid. It's responsive without media queries.
+
+How does it work?
+
+Here is the code snippet.
+
+```css
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(17.5rem, 100%), 1fr));
+  gap: 4.75rem 1.875rem;
+}
+```
+
+I can use Flexbox for this type of layout. I use grid for that particular layout because of the magic function, [`minmax`](https://developer.mozilla.org/en-US/docs/Web/CSS/minmax).
+
+The `minmax` function allows me to set a minimum value and a maximum value for the size of each column. It also has a nested `min` function. The purpose of that is to allow the content to shrink on tiny devices. So, if the content needs to be smaller than `17.5rem`, then the element is allowed to shrink based on the width of the parent element.
+
+The `1fr` is the maximum allowed size for the column. It means those cards will take the remaining space and then divide them equally into each column.
+
+As a result, the column is automatically created once there's enough space. Starting from the mobile view, the users will get a one-column layout. Then as the screen is getting larger, the users get a two-column layout which finally becomes a three-column layout.
+
+All of these things are done without media queries. I love it! 😍
+
+##### Progressive Enhancement
+
+[The support for CSS Grid](https://caniuse.com/css-grid) is around 96% by the time I write this. But, based on the analytics that I had on Heroku (my account is now deleted), some people view my website on Windows XP.
+
+If those users are using Chromium browsers (Chromium v49), they won't be able to see the grid layout. So, I want to provide them with a good baseline experience (or [minimum viable experience](https://hankchizljaw.com/wrote/the-p-in-progressive-enhancement-stands-for-pragmatism/)).
+
+So for the browsers that don't support the `@supports` keyword and `display: grid` attribute, those browsers will apply this styling instead.
+
+```css
+.grid > * + * {
+  margin-top: 4rem;
+}
+
+.grid > * {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 25rem;
+}
+```
+
+Those users will get a one-column layout with `max-width: 25rem`. Also, some vertical spacing for each child element that has a sibling element.
+
+<details>
+<summary>Preview one-column layout (GIF)</summary>
+
+![one-column layout of the cards](./images/one-layout-column.gif)
+
+</details>
 
 #### Performance
 
@@ -351,6 +418,7 @@ Then, I decided to download the font file. The file size is only **6.25kb**. If 
 ### Useful Resources
 
 - [Menus & Menu Buttons | Inclusive Components](https://inclusive-components.design/menus-menu-buttons/) -  This is an amazing article that helped me create an accessible menu component. I'd recommend it to anyone that doing this challenge (or any other challenges that need a hamburger menu).
+- [Create a responsive grid layout - Piccalilli](https://piccalil.li/tutorial/create-a-responsive-grid-layout-with-no-media-queries-using-css-grid/) - This article is helping me to create a responsive grid layout without media queries. It also teaches me how to progressively enhance the CSS Grid. I recommend you read this to level up your CSS Grid!
 
 ## Author
 
