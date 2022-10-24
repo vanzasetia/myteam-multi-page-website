@@ -131,10 +131,12 @@ img {
 
 /**
  * 1. Windows high contrast hover effect
+ * 2. Prevents following the height of the parent element
  */
 a {
   display: inline-block;
   width: fit-content;
+  height: fit-content; /* 2 */
   color: inherit;
   text-decoration-color: transparent; /* 1 */
 
