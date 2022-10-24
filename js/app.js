@@ -2,7 +2,6 @@
   "use strict";
   const body = document.querySelector(".js-body");
   const menuButton = document.querySelector(".js-menu-button");
-  const menuList = document.querySelector(".js-menu-list");
   const closeMenuButton = document.querySelector(".js-close-menu-button");
   const headerLinks = document.querySelectorAll(".js-header-link");
   const main = document.querySelector(".js-main");
@@ -29,14 +28,12 @@
 
   const openMenu = () => {
     menuButton.setAttribute("aria-expanded", "true");
-    menuList.classList.add("is-open");
     body.classList.add("is-menu-open");
     trapFocusOnNav();
   };
 
   const closeMenu = () => {
     menuButton.setAttribute("aria-expanded", "false");
-    menuList.classList.remove("is-open");
     body.classList.remove("is-menu-open");
     removeInertAttributes();
   };

@@ -48,8 +48,15 @@
   }
 }
 
+.header__menu-button[aria-expanded="true"] ~ .header__list,
+.header__menu-button[aria-expanded="true"] ~ .header__menu-button--close {
+  transform: translate(0);
+  visibility: visible;
+}
+
 /**
  * 1. Makes the close button disappear faster
+ *    than the menu.
  */
 .header__menu-button--close {
   position: relative;
@@ -91,16 +98,6 @@
   @include breakpoint-up("tiny") {
     @include make-list-to-normal-flow;
   }
-}
-
-.header__list.is-open {
-  transform: translate(0);
-  visibility: visible;
-}
-
-.header__list.is-open + .header__menu-button--close {
-  transform: translate(0);
-  visibility: visible;
 }
 
 .header__item:first-child {
