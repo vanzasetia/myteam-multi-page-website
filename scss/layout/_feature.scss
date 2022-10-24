@@ -3,7 +3,6 @@
 .feature {
   background-image: url("/svg/bg-pattern-home-3.svg");
   background-position: top right rem(-100);
-  background-repeat: no-repeat;
 
   @include breakpoint-up("very-small") {
     background-position: bottom right rem(-100);

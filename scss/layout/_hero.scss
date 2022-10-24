@@ -3,7 +3,6 @@
 .hero {
   background-image: url("/svg/bg-pattern-home-2.svg");
   background-position: bottom center;
-  background-repeat: no-repeat;
   padding-bottom: var(--hero-homepage-block-end-spacing);
 
   @include breakpoint-up("very-small") {

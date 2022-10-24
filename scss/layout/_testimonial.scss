@@ -4,7 +4,6 @@
   background-image: url("/svg/bg-pattern-home-4-about-3.svg"),
     url("/svg/bg-pattern-home-5.svg");
   background-position: top left, bottom right;
-  background-repeat: no-repeat;
 }
 
 .testimonial__container {
@@ -50,7 +49,6 @@
     transform: translateX(-50%);
     background-image: url("/svg/icon-quotes.svg");
     background-size: 100%;
-    background-repeat: no-repeat;
     width: rem(67);
     height: rem(56);
     content: "";
