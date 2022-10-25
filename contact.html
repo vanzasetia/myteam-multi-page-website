@@ -175,9 +175,130 @@
       </div>
     </header>
     <main id="main" class="js-main">
-      <div class="section section--hero">
-        <div class="container">
-          <h1 class="title title--large">Contact</h1>
+      <div class="section section--hero contact">
+        <div class="container contact__container">
+          <div>
+            <h1 class="title title--large">Contact</h1>
+            <p class="title title--small contact__accent">Ask us about</p>
+            <ul role="list">
+              <li class="contact__item">
+                <img
+                  src="/svg/icon-person.svg"
+                  alt=""
+                  class="contact__icon"
+                  width="65"
+                  height="72"
+                  aria-hidden="true"
+                />
+                The quality of our talent network
+              </li>
+              <li class="contact__item">
+                <img
+                  src="/svg/icon-cog.svg"
+                  alt=""
+                  class="contact__icon"
+                  width="72"
+                  height="72"
+                  aria-hidden="true"
+                />
+                Usage & implementation of our software
+              </li>
+              <li class="contact__item">
+                <img
+                  src="/svg/icon-chart.svg"
+                  alt=""
+                  class="contact__icon"
+                  width="72"
+                  height="72"
+                  aria-hidden="true"
+                />
+                How we help drive innovation
+              </li>
+            </ul>
+          </div>
+          <form class="contact__form js-form">
+            <div class="contact__form-control">
+              <label for="name-input" class="sr-only">Name</label>
+              <input
+                type="text"
+                name="name"
+                id="name-input"
+                class="contact__input js-required-input"
+                placeholder="Name"
+                required
+                aria-describedby="name-input-alert"
+                data-id="name"
+              />
+              <p
+                id="name-input-alert"
+                class="contact__alert js-alert"
+                aria-live="polite"
+                data-id="name"
+              ></p>
+            </div>
+            <div class="contact__form-control">
+              <label for="email-input" class="sr-only">Email Address</label>
+              <input
+                type="email"
+                name="email"
+                id="email-input"
+                class="contact__input js-required-input"
+                placeholder="Email Address"
+                required
+                aria-describedby="email-input-alert"
+                data-id="email"
+              />
+              <p
+                id="email-input-alert"
+                class="contact__alert js-alert"
+                aria-live="polite"
+                data-id="email"
+              ></p>
+            </div>
+            <div class="contact__form-control">
+              <label for="company-input" class="sr-only">Company Name</label>
+              <input
+                type="text"
+                name="company"
+                id="company-input"
+                class="contact__input"
+                placeholder="Company Name"
+              />
+            </div>
+            <div class="contact__form-control">
+              <label for="title-input" class="sr-only">Title</label>
+              <input
+                type="text"
+                name="title"
+                id="title-input"
+                class="contact__input"
+                placeholder="Title"
+              />
+            </div>
+            <div class="contact__form-control">
+              <label for="message-input" class="sr-only">Message</label>
+              <textarea
+                name="message"
+                id="message-input"
+                class="contact__input contact__input--textarea js-required-input"
+                cols="30"
+                rows="10"
+                placeholder="Message"
+                required
+                aria-describedby="message-input-alert"
+                data-id="message"
+              ></textarea>
+              <p
+                id="message-input-alert"
+                class="contact__alert js-alert"
+                aria-live="polite"
+                data-id="message"
+              ></p>
+            </div>
+            <button type="submit" class="button button--white-fill">
+              submit
+            </button>
+          </form>
         </div>
       </div>
     </main>

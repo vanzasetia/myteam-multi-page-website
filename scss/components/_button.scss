@@ -46,6 +46,8 @@
   background-color: var(--white);
   color: var(--deep-jungle-green);
 
+  @include focus-visible(var(--white));
+
   @include hover {
     background-color: var(--rapture-blue);
   }

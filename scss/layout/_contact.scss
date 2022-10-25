@@ -1,0 +1,108 @@
+@use "../abstracts" as *;
+
+$-input-padding-inline: rem(14);
+
+.contact {
+  background-image: url("/svg/bg-pattern-contact-2.svg");
+  background-position: bottom rem(-100) right rem(-100);
+  padding-bottom: rem(120);
+
+  @include breakpoint-up("tiny") {
+    background-image: url("/svg/bg-pattern-contact-2.svg"),
+      url("/svg/bg-pattern-about-2-contact-1.svg");
+    background-position: bottom right rem(-100), top left rem(-100);
+  }
+}
+
+.contact__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(30);
+}
+
+/**
+ * 1. Follow the text-align of the .title
+ */
+.contact__container > * {
+  flex: 1 1 rem(387); /* 1 */
+}
+
+.contact .title {
+  max-width: unset;
+  text-align: center;
+
+  @include breakpoint-up("very-small") {
+    text-align: left;
+  }
+}
+
+.contact__accent {
+  margin-top: rem(16);
+  margin-bottom: rem(32);
+  color: var(--light-coral);
+  font-weight: 700;
+}
+
+.contact__item {
+  display: flex;
+  align-items: center;
+}
+
+.contact__item + .contact__item {
+  margin-top: rem(8);
+}
+
+.contact__icon {
+  margin-right: rem(23);
+}
+
+.contact__form {
+  font-size: var(--body-font-size);
+}
+
+.contact__form-control {
+  margin-bottom: rem(24);
+}
+
+.contact__input {
+  display: block;
+  border: none;
+  border-bottom: rem(1) solid var(--white);
+  background-color: transparent;
+  padding-right: $-input-padding-inline;
+  padding-bottom: rem(16);
+  padding-left: $-input-padding-inline;
+  width: 100%;
+  color: var(--white);
+  letter-spacing: rem(-0.12);
+
+  @include focus-visible(var(--white), 0);
+}
+
+.contact__input--textarea {
+  height: rem(84);
+  resize: none;
+}
+
+.contact__input.is-invalid {
+  border-bottom-color: var(--light-coral);
+}
+
+.contact__input::placeholder {
+  opacity: 0.6;
+  color: var(--white);
+}
+
+.contact__input.is-invalid::placeholder {
+  color: var(--light-coral);
+}
+
+.contact__input:not(:placeholder-shown) {
+  border-bottom-color: var(--rapture-blue);
+}
+
+.contact__alert {
+  padding-left: $-input-padding-inline;
+  color: var(--light-coral);
+  font-style: italic;
+}
