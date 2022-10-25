@@ -22,7 +22,7 @@
     </a>
 </p>
 
-# Myteam Multi-Page Website
+# My Team Multi-Page Website
 
 ## Table of contents
 - [Overview](#overview)
@@ -311,6 +311,18 @@ When you click the button, it opens the hidden content for the card.
 When JavaScript is off, the users still be able to see the whole content.
 
 ![Showing all the card content is visible and the button from each card is gone](./images/about-card-javascript-off.png)
+
+##### Form Validation
+
+When JavaScript is available, use custom form validation.
+
+![Showing all required inputs have alert messages](./images/form-validation-javascript.png)
+
+When JavaScript is not available, use native validation.
+
+![Showing the first input has an alert message from the browser](./images/form-validation-no-javascript.png)
+
+This was done by adding `novalidate` attribute to the `form` with JavaScript. This way, when JavaScript is not available the users will get native form validation instead.
 
 #### Responsive Grid
 
