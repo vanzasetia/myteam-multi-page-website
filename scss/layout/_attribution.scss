@@ -1,0 +1,16 @@
+@use "../abstracts" as *;
+
+.attribution {
+  background-color: var(--sacramento-state-green);
+  padding: rem(40) rem(16);
+  color: var(--rapture-blue);
+  text-align: center;
+}
+
+.attribution a {
+  color: var(--white);
+
+  @include hover {
+    color: var(--light-coral);
+  }
+}

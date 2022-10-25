@@ -1400,3 +1400,30 @@ svg path {
     text-align: right;
   }
 }
+
+.attribution {
+  background-color: var(--sacramento-state-green);
+  padding: 2.5rem 1rem;
+  color: var(--rapture-blue);
+  text-align: center;
+}
+
+.attribution a {
+  color: var(--white);
+}
+@media (hover: none) {
+  .attribution a {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  .attribution a:active {
+    color: var(--light-coral);
+  }
+}
+@media (-ms-high-contrast: none),
+  (-ms-high-contrast: active),
+  (-moz-touch-enabled: 0),
+  (hover: hover) {
+  .attribution a:hover {
+    color: var(--light-coral);
+  }
+}
