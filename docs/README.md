@@ -61,16 +61,33 @@ This is the place where I put all the resources that I find useful to build this
 - [Fluid type scale calculator | Utopia (Settings)](https://utopia.fyi/type/calculator/?c=320,4,1.2,1350,18,1.414,5,2,&s=0.75%7C0.5%7C0.25,1.5%7C2%7C3%7C4%7C6,s-l)
 - [Fluid Space Calculator | Utopia (Settings)](https://utopia.fyi/space/calculator/?c=320,80,1.2,1350,140,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l)
 - [Url Encoder - Online Tool](https://www.urlencoder.net/) - It helps me encode necessary text to `text` parameter to Google Fonts API to import "Livvic Medium" font family.
+- [Canva](https://www.canva.com/) - design the banner.
+- [Squoosh](squoosh.app) - optimize screenshots and banner.
 
 ### Validations
 
 - [W3C Link Checker](https://validator.w3.org/checklink)
   - [W3C Link Checker: https://myteamsoftware.netlify.app/](https://validator.w3.org/checklink?check=Check&hide_type=all&summary=on&uri=https%3A%2F%2Fmyteamsoftware.netlify.app%2F)
   - [W3C Link Checker: https://myteamsoftware.netlify.app/about.html](https://validator.w3.org/checklink?uri=https%3A%2F%2Fmyteamsoftware.netlify.app%2Fabout.html&summary=on&hide_type=all&depth=&check=Check)
+  - [W3C Link Checker: https://myteamsoftware.netlify.app/contact.htm](https://validator.w3.org/checklink?uri=https%3A%2F%2Fmyteamsoftware.netlify.app%2Fcontact.html&summary=on&hide_type=all&depth=&check=Check)
 - [Ready to check - Nu Html Checker](https://validator.w3.org/nu/)
   - [Showing results for https://myteamsoftware.netlify.app/ - Nu Html Checker](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmyteamsoftware.netlify.app%2F)
   - [Showing results for https://myteamsoftware.netlify.app/about.html - Nu Html Checker](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmyteamsoftware.netlify.app%2Fabout.html)
+  - [Showing results for https://myteamsoftware.netlify.app/contact.html - Nu Html Checker](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmyteamsoftware.netlify.app%2Fcontact.html)
 - [W3C CSS Validator results for https://myteamsoftware.netlify.app/ (CSS level 3 + SVG)](https://jigsaw.w3.org/css-validator/validator?profile=css3svg&warning=0&uri=https%3A%2F%2Fmyteamsoftware.netlify.app%2F)
+- [SEOptimer](https://www.seoptimer.com/) - [SEO Audit for myteamsoftware.netlify.app - SEOptimer](https://www.seoptimer.com/myteamsoftware.netlify.app)
+- [Meta Tags](https://metatags.io/)
+- [Checklist - The A11Y Project](https://www.a11yproject.com/checklist/)
+- [GTmetrix | Website Performance Testing and Monitoring](https://gtmetrix.com/) - [Latest Performance Report for: https://myteamsoftware.netlify.app/ | GTmetrix](https://gtmetrix.com/reports/myteamsoftware.netlify.app/aC6fzryR/)
+- [WebPageTest - Website Performance and Optimization Test](https://www.webpagetest.org/) - [myteamsoftware.netl...irginia USA - EC2 - WebPageTest Result](https://www.webpagetest.org/result/221026_AiDc5J_8R8/)
+- [PageSpeed Insights](ttps://pagespeed.web.dev) - [PageSpeed Insights - https://myteamsoftware.netlify.app/](https://pagespeed.web.dev/report?url=https%3A%2F%2Fmyteamsoftware.netlify.app%2F)
+- [Page Speed Test - Pingdom](https://www.pingdom.com/page-speed-test/)
+- [SSL Server Test (Powered by Qualys SSL Labs)](https://www.ssllabs.com/ssltest/) - [SSL Server Test: myteamsoftware.netlify.app (Powered by Qualys SSL Labs)](https://www.ssllabs.com/ssltest/analyze.html?d=myteamsoftware.netlify.app)
+- [WAVE Web Accessibility Evaluation Tools](https://wave.webaim.org/)
+  - [WAVE Report of Find the Right Team for Your Next Project - myteam](https://wave.webaim.org/report#/https://myteamsoftware.netlify.app/)
+  - [WAVE Report of About - myteam](https://wave.webaim.org/report#/https://myteamsoftware.netlify.app/about.html)
+  - [WAVE Report of Contact Us - myteam](https://wave.webaim.org/report#/https://myteamsoftware.netlify.app/contact.html)
+- [The Front-End Checklist - ✨ Your best Front-End Tool ✨](https://frontendchecklist.io/)
 
 ### Others
 
