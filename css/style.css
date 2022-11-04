@@ -254,7 +254,7 @@ a:focus {
     text-decoration: none; /* 1 */
   }
 }
-@media screen and (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) {
   a {
     transition: color var(--transition);
   }
@@ -321,7 +321,7 @@ svg path {
   font-size: 1.25rem;
   text-decoration: 0.1em solid;
 }
-@media screen and (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) {
   .skip-content {
     transition: transform 0.3s ease, color var(--transition);
   }
@@ -392,7 +392,7 @@ svg path {
     color: var(--dark-green);
   }
 }
-@media screen and (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) {
   .button--light-border {
     transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
   }
@@ -425,7 +425,7 @@ svg path {
     color: var(--white);
   }
 }
-@media screen and (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) {
   .button--dark-border {
     transition: background-color var(--transition), color var(--transition);
   }
@@ -456,7 +456,7 @@ svg path {
     background-color: var(--rapture-blue);
   }
 }
-@media screen and (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) {
   .button--white-fill {
     transition: background-color var(--transition);
   }
@@ -539,7 +539,7 @@ svg path {
   visibility: hidden;
   z-index: 2;
 }
-@media screen and (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) {
   .header__menu-button--close {
     transition: transform var(--transition), visibility var(--transition);
   }
@@ -564,7 +564,7 @@ svg path {
   height: 100vh;
   list-style: none;
 }
-@media screen and (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) {
   .header__list {
     transition: transform var(--transition), visibility var(--transition);
   }
@@ -1077,7 +1077,7 @@ svg path {
     background-color: var(--rapture-blue);
   }
 }
-@media screen and (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) {
   .director__button {
     transition: background-color var(--transition);
   }
@@ -1112,7 +1112,7 @@ svg path {
   opacity: 1;
 }
 
-@media screen and (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) {
   .director__icon {
     transition: transform var(--transition);
   }
@@ -1134,7 +1134,7 @@ svg path {
   height: 100%;
   text-align: center;
 }
-@media screen and (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) {
   .director__blockquote {
     transition: opacity var(--transition), visibility var(--transition);
   }
