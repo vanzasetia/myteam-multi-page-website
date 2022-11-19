@@ -262,18 +262,6 @@ Then, for the JavaScript.
 
 ![Slack. Grace Snow says that using aria-labelledby on toggle buttons makes the VoiceOver ignores the state of the button (expanded or collapsed state)](./images/grace-snow-voiceover-aria-labelledby.png)
 
-#### Problem With Hamburger Menu
-
-Now, there is a problem with this hamburger menu.
-
-When, the users zoom the page, at some zoom level (in my case at 400% zoom level), not all menu items are visible.
-
-![](./images/400-zoom-level.png)
-
-I can't scroll to see the rest of the menu items.
-
-It's because of the `position: fixed`. You may hear before that it's best to avoid fixed and absolute positioning. This is one of the reasons.
-
 #### No JavaScript No Problem
 
 Usually, when the users turn off the JavaScript, I decided to give them only a message to turn on JavaScript.
