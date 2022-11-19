@@ -12,7 +12,6 @@
   background-image: unset;
   background-color: unset;
   padding: 0;
-  width: unset;
   height: unset;
 }
 
@@ -76,6 +75,10 @@
   width: 100%;
 }
 
+/**
+ * 1. Allow scrolling on high zoom level.
+ */
+
 .header__list {
   position: fixed;
   top: 0;
@@ -89,6 +92,7 @@
   padding-right: rem(48);
   padding-left: rem(48);
   height: 100vh;
+  overflow-y: auto; /* 1 */
   list-style: none;
 
   @include prefers-motion {
