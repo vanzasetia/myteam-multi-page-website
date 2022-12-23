@@ -587,6 +587,7 @@ svg path {
     background-color: unset;
     padding: 0;
     height: unset;
+    overflow-y: visible;
   }
 }
 
@@ -642,6 +643,7 @@ svg path {
   background-color: unset;
   padding: 0;
   height: unset;
+  overflow-y: visible;
 }
 
 .no-js .header__list::before {
