@@ -115,18 +115,15 @@ Here is the HTML markup.
       aria-hidden="true"
     />
   </button>
-  <ul
-    id="menu-list"
-    role="menu"
-  >
-    <li role="presentation">
-      <a href="/" role="menuitem">home</a>
+  <ul id="menu-list">
+    <li>
+      <a href="/">home</a>
     </li>
-    <li role="presentation">
-      <a href="/about.html" role="menuitem">about</a>
+    <li>
+      <a href="/about.html">about</a>
     </li>
-    <li role="presentation">
-      <a href="/contact.html" role="menuitem">contact us</a>
+    <li>
+      <a href="/contact.html">contact us</a>
     </li>
   </ul>
   <button
@@ -196,31 +193,6 @@ Here are the reasons why the HTML markup needs to be like that.
 - `aria-expanded` - to tell the screen readers whether the `button` is in "expanded" state or "collapsed" state. Or in other words, it is used to tell the screen reader whether the menu is opened or closed.
 - `aria-controls` - to tell that this button is controlling the menu (`ul`).
 - `aria-labelledby` - to give the `button` an accessible name (*menu*). It's the same way as labeling the `nav` elements.
-
-Next, let me explain the list.
-
-```html
-<ul
-  id="menu-list"
-  role="menu"
->
-  <li role="presentation">
-    <a href="/" role="menuitem">home</a>
-  </li>
-  <li role="presentation">
-    <a href="/about.html" role="menuitem">about</a>
-  </li>
-  <li role="presentation">
-    <a href="/contact.html" role="menuitem">contact us</a>
-  </li>
-</ul>
-```
-
-*"What's the purpose of doing all these things?"* (You may ask)
-
-- `ul[role="menu"]` - to tell screen readers that it is a menu
-- `li` with `role="presentation"` - to remove the semantic meaning of the `li`.
-- `a` with `role="menuitem"` - to tell that it is an item of a menu. This also removes the semantic meaning of the `a` tag.
 
 Lastly, for the close button.
 
